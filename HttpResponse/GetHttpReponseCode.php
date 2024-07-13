@@ -11,6 +11,12 @@ class GetHttpReponseCode
     public function getHttpReponseCode($YourWebsiteIP, $SendCount = 1, $TimeOut = 1000)
     {
         // Get Server OS
+        // 添加CORS HEADER
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST');
+        header('Access-Control-Allow-Headers: X-Requested-With');
+        header('Content-Type: application/json');
+
         $ServerOS = PHP_OS;
         if (stripos($ServerOS, 'linux') !== false){
             $output = shell_exec("ping -c $SendCount -W $TimeOut $YourWebsiteIP");

@@ -33,16 +33,18 @@ function TuringFrame()
         printColored("TuringFrame has already been executed.", COLOR_YELLOW);
         $targetFile = file_get_contents($executionStatusFile);
     } else {
-        echo COLOR_YELLOW . "Please Input your Project, like ./ProjectName: " . COLOR_RESET;
+        // 更改提示
+        echo COLOR_YELLOW . "Please Input your Project Name " . COLOR_RESET;
         $targetDir = trim(fgets(STDIN));
         printColored("=$targetDir!", COLOR_GREEN);
-
         $targetFile = $targetDir . '/RoutesConfig.php';
 
         if (!is_dir($targetDir)) {
             if (!mkdir($targetDir, 0777, true)) {
                 die(COLOR_RED . "Dir Died!" . COLOR_RESET);
             }
+            // 创建模板文件夹
+            @mkdir($targetDir . '/templates', 0777, true);
         }
 
         $routes = [];
