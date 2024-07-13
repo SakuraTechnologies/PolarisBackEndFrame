@@ -1,6 +1,9 @@
 <?php
 
+namespace TuringFrame;
 // 定义颜色常量
+use TemplateEnginee\InterpreterTemplateEnginee;
+
 const COLOR_RESET = "\033[0m";
 const COLOR_GREEN = "\033[32m";
 const COLOR_YELLOW = "\033[33m";
@@ -43,8 +46,12 @@ function TuringFrame()
             if (!mkdir($targetDir, 0777, true)) {
                 die(COLOR_RED . "Dir Died!" . COLOR_RESET);
             }
+            // 模板路径
+            $templates = $targetDir . '/templates';
+            $App = $targetDir . '/App';
             // 创建模板文件夹
-            @mkdir($targetDir . '/templates', 0777, true);
+            @mkdir($templates, 0777, true);
+            @mkdir($App, 0777, true);
         }
 
         $routes = [];
