@@ -1,8 +1,8 @@
 <?php
 
 namespace TuringFrame;
+
 // 定义颜色常量
-use TemplateEnginee\InterpreterTemplateEnginee;
 
 const COLOR_RESET = "\033[0m";
 const COLOR_GREEN = "\033[32m";
@@ -24,6 +24,7 @@ function printColored($text, $color)
 $executionStatusFile = './.TuringFrame_executed';
 $checkNginx = './.htaccess';
 
+global $templates;
 
 // 图灵框架主程序
 function TuringFrame()
@@ -85,8 +86,8 @@ function TuringFrame()
 
     printColored("Success Created, Now Next Env Check", COLOR_GREEN);
 
-    if (file_exists($checkNginx)){
-        echo('[TuringEnvCheck] Nginx Env is Prepare') . COLOR_YELLOW;
+    if (file_exists($checkNginx)) {
+        echo ('[TuringEnvCheck] Nginx Env is Prepare') . COLOR_YELLOW . "\n";
     } else {
         echo ('[TuringEnvCheck] Couldnt find Nginx Env') . COLOR_RED;
     }
@@ -99,9 +100,60 @@ function StartServer($routesConfigPath)
 {
     if (file_exists($routesConfigPath)) {
         require_once $routesConfigPath;
-        echo "Server is starting with routes config from: " . $routesConfigPath;
+        echo "Server is starting with routes config from: \n" . $routesConfigPath . "";
     } else {
         echo "RoutesConfig file does not exist.";
+    }
+
+    global $checkNginx;
+
+    if (file_exists($checkNginx)) {
+        // 读取nginx.conf文件的部分内容
+        $nginxConfPath = "./nginx-1.24.0/conf/nginx.conf";
+        if (file_exists($nginxConfPath)) {
+            $nginxConfContent = file_get_contents($nginxConfPath);
+            // 输出前几行作为示例
+            $lines = explode("\n", $nginxConfContent);
+            for ($i = 35; $i < 36; $i++) {
+                echo "Nginx Started on:$lines[$i]" . PHP_EOL;
+            }
+            echo "Nginx Service was prepared, Visit website please by your Nginx host" . PHP_EOL;
+            echo "Starting Nginx..." . PHP_EOL . "\n";
+
+            // 启动Nginx服务
+            $nginxPath = "./nginx-1.24.0/nginx.exe";
+            exec("\"$nginxPath\"");
+            while (True) {
+                echo "Press H to get help: ";
+                $input = trim(fgets(STDIN));
+                switch ($input) {
+                    case 'Q':
+                        $nginxPath = "./nginx-1.24.0/nginx.exe";
+                        $nginxLogsDir = "./TuringFrame/nginx-1.24.0/logs";
+                        exec("cd nginx-1.24.0");
+                        exec(" /nginx.exe -s stop");
+                        exec("/nginx.exe -s reload");
+                        exec("taskkill /f /t /im nginx.exe");
+                        exit();
+                        break;
+                    case 'H':
+                        echo '----------HELP----------' . "\n";
+                        echo 'RESTART PRESS R' . "\n";
+                        echo 'STOP PRESS Q' . "\n";
+                        echo '------------------------' . "\n";
+                    case 'R':
+                        exec("start \"\" \"$nginxPath\"");
+                }
+            }
+        } else {
+            echo "Nginx configuration file not found." . PHP_EOL;
+        }
+    } else {
+        echo "[TuringEnvCheck] Couldnt find Nginx Env" . PHP_EOL;
+    }
+
+    if (file_exists($executionStatusFile)) {
+        echo "Project was Created! Port was Listening" . PHP_EOL;
     }
 
 }
