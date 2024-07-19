@@ -18,7 +18,7 @@ class Connector implements SQLTypeInterface
         // Create Connector
         $this->conn = new mysqli($host, $user, $password, $database);
         // Try Catch Connect Error
-        if ($this->conn->connect_error) {
+        if ($this->conn->connect_errno) {
             die("Connection failed: " . $this->conn->connect_error);
         }
         echo "Connected successfully";
