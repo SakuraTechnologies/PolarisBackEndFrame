@@ -1,0 +1,7 @@
+2024/07/19 15:32:41 [notice] 20740#22676: signal process started
+2024/07/19 15:32:42 [notice] 16036#22500: signal process started
+2024/07/19 15:32:42 [error] 16036#22500: CreateFile() "D:\TuringFrame\nginx-1.24.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2024/07/19 15:32:50 [notice] 23488#13360: signal process started
+2024/07/19 15:32:50 [error] 23488#13360: CreateFile() "D:\TuringFrame\nginx-1.24.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2024/07/19 15:33:57 [notice] 284#23508: signal process started
+2024/07/19 15:33:57 [error] 284#23508: CreateFile() "D:\TuringFrame\nginx-1.24.0/logs/nginx.pid" failed (2: The system cannot find the file specified)
