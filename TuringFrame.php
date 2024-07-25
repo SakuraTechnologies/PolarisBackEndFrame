@@ -2,7 +2,9 @@
 
 namespace TuringFrame;
 
-// 定义颜色常量
+use Exception;
+
+// Include the HttpServer class
 
 const COLOR_RESET = "\033[0m";
 const COLOR_GREEN = "\033[32m";
@@ -10,7 +12,6 @@ const COLOR_YELLOW = "\033[33m";
 const COLOR_BLUE = "\033[34m";
 const COLOR_RED = "\033[31m";
 
-// 颜色字打印
 function printColored($text, $color)
 {
     if (function_exists('posix_isatty') && posix_isatty(STDOUT)) {
@@ -20,143 +21,51 @@ function printColored($text, $color)
     }
 }
 
-// 必要目录
-$executionStatusFile = './.TuringFrame_executed';
-$checkNginx = './.htaccess';
-
-global $templates;
-
-// 图灵框架主程序
 function TuringFrame()
 {
     global $executionStatusFile;
     global $checkNginx;
 
-    // 如果这个文件存在，则说明已经执行过，不再执行
+    $executionStatusFile = './.TuringFrame_executed';
+    $checkNginx = './.htaccess';
+
     if (file_exists($executionStatusFile)) {
         printColored("TuringFrame has already been executed.", COLOR_YELLOW);
-        $targetFile = file_get_contents($executionStatusFile);
+        $targetDir = file_get_contents($executionStatusFile);
     } else {
-        // 更改提示
         echo COLOR_YELLOW . "Please Input your Project Name " . COLOR_RESET;
         $targetDir = trim(fgets(STDIN));
-        printColored("=$targetDir!", COLOR_GREEN);
-        $targetFile = $targetDir . '/RoutesConfig.php';
+        printColored("Project $targetDir! was created", COLOR_GREEN);
 
         if (!is_dir($targetDir)) {
             if (!mkdir($targetDir, 0777, true)) {
                 die(COLOR_RED . "Dir Died!" . COLOR_RESET);
             }
-            // 模板路径
+
+
             $templates = $targetDir . '/templates';
             $App = $targetDir . '/App';
-            // 创建模板文件夹
             @mkdir($templates, 0777, true);
             @mkdir($App, 0777, true);
         }
-
-        $routes = [];
-        while (true) {
-            echo "Enter route name (or 'done' to finish): ";
-            $routeName = trim(fgets(STDIN));
-            if ($routeName === 'done' or ctype_upper($routeName)) {
-                break;
-            }
-            echo "Enter handler (e.g.,'home' => 'Home::index',): ";
-            $handler = trim(fgets(STDIN));
-            $routes[$routeName] = $handler;
-        }
-
-        // 定义一个字段，这个字段是路由配置
-        $content = '<?php' . PHP_EOL .
-            '$routes = [// Write Your Routes Here //EXAMPLE: ‘ROUTENAME’ => ‘Class::Method’' . PHP_EOL;
-
-        foreach ($routes as $routeName => $handler) {
-            $content .= "    '" . $routeName . "' => '" . $handler . "'," . PHP_EOL;
-        }
-
-        $content .= '];' . PHP_EOL;
-
-        if (file_put_contents($targetFile, $content) === false) {
-            die(COLOR_RED . "File Died!" . COLOR_RESET);
-        }
-
-        file_put_contents($executionStatusFile, $targetFile);
+        file_put_contents($executionStatusFile, $targetDir);
     }
 
-    printColored("Success Created, Now Next Env Check", COLOR_GREEN);
-
-    if (file_exists($checkNginx)) {
-        echo ('[TuringEnvCheck] Nginx Env is Prepare') . COLOR_YELLOW . "\n";
-    } else {
-        echo ('[TuringEnvCheck] Couldnt find Nginx Env') . COLOR_RED;
-    }
-
-    return $targetFile;
+    return $targetDir; // Return $targetDir
 }
 
-// 服务器启动函数
-function StartServer($routesConfigPath)
+function StartServer($targetDir, $port)
 {
-    if (file_exists($routesConfigPath)) {
-        require_once $routesConfigPath;
-        echo "Server is starting with routes config from: \n" . $routesConfigPath . "";
-    } else {
-        echo "RoutesConfig file does not exist.";
+    echo "Starting Server..." . COLOR_GREEN;
+    echo "\n" . "Server Started! \n" . COLOR_GREEN;
+
+    while (true) {
+        exec("php -S localhost:$port");
+        echo "PHP CLI Server was running on localhost:$port";
     }
 
-    global $checkNginx;
-
-    if (file_exists($checkNginx)) {
-        // 读取nginx.conf文件的部分内容
-        $nginxConfPath = "./nginx-1.24.0/conf/nginx.conf";
-        if (file_exists($nginxConfPath)) {
-            $nginxConfContent = file_get_contents($nginxConfPath);
-            // 输出前几行作为示例
-            $lines = explode("\n", $nginxConfContent);
-            for ($i = 35; $i < 36; $i++) {
-                echo "Nginx Started on:$lines[$i]" . PHP_EOL;
-            }
-            echo "Nginx Service was prepared, Visit website please by your Nginx host" . PHP_EOL;
-            echo "Starting Nginx..." . PHP_EOL . "\n";
-
-            // 启动Nginx服务
-            $nginxPath = "./nginx-1.24.0/nginx.exe";
-            exec("\"$nginxPath\"");
-            while (True) {
-                echo "Press H to get help: ";
-                $input = trim(fgets(STDIN));
-                switch ($input) {
-                    case 'Q':
-                        $nginxPath = "./nginx-1.24.0/nginx.exe";
-                        $nginxLogsDir = "./TuringFrame/nginx-1.24.0/logs";
-                        exec("cd nginx-1.24.0");
-                        exec(" /nginx.exe -s stop");
-                        exec("/nginx.exe -s reload");
-                        exec("taskkill /f /t /im nginx.exe");
-                        exit();
-                        break;
-                    case 'H':
-                        echo '----------HELP----------' . "\n";
-                        echo 'RESTART PRESS R' . "\n";
-                        echo 'STOP PRESS Q' . "\n";
-                        echo '------------------------' . "\n";
-                    case 'R':
-                        exec("start \"\" \"$nginxPath\"");
-                }
-            }
-        } else {
-            echo "Nginx configuration file not found." . PHP_EOL;
-        }
-    } else {
-        echo "[TuringEnvCheck] Couldnt find Nginx Env" . PHP_EOL;
-    }
-
-    if (file_exists($executionStatusFile)) {
-        echo "Project was Created! Port was Listening" . PHP_EOL;
-    }
 
 }
 
-$routesConfigPath = TuringFrame();
-StartServer($routesConfigPath);
+$targetDir = TuringFrame();
+StartServer($targetDir, 8000);

@@ -5,7 +5,7 @@ namespace DataBase;
 use PDO;
 use PDOException;
 
-class SQLCommand implements SQLCommandTypeInterface
+class SQLCommand
 {
     private $pdo;
 

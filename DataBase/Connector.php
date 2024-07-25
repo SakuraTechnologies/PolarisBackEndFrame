@@ -7,7 +7,7 @@ use PDO;
 use SQLite3;
 
 // Database Connector
-class Connector implements SQLTypeInterface
+class Connector
 {
     // Create A conn
     private $conn;
