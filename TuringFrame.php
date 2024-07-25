@@ -4,8 +4,6 @@ namespace TuringFrame;
 
 use Exception;
 
-// Include the HttpServer class
-
 const COLOR_RESET = "\033[0m";
 const COLOR_GREEN = "\033[32m";
 const COLOR_YELLOW = "\033[33m";
@@ -34,8 +32,9 @@ function TuringFrame()
         $targetDir = file_get_contents($executionStatusFile);
     } else {
         echo COLOR_YELLOW . "Please Input your Project Name " . COLOR_RESET;
-        $targetDir = trim(fgets(STDIN));
-        printColored("Project $targetDir! was created", COLOR_GREEN);
+        $projectName = trim(fgets(STDIN));
+        $targetDir = "\TuringFrame/public/$projectName"; // Change the target directory to be inside TuringFrame
+        printColored("Project $projectName was created", COLOR_GREEN);
 
         if (!is_dir($targetDir)) {
             if (!mkdir($targetDir, 0777, true)) {
@@ -43,10 +42,11 @@ function TuringFrame()
             }
 
 
-            $templates = $targetDir . '/templates';
-            $App = $targetDir . '/App';
+            $templates = "$targetDir/templates";
+            $App = "$targetDir/App";
             @mkdir($templates, 0777, true);
             @mkdir($App, 0777, true);
+
         }
         file_put_contents($executionStatusFile, $targetDir);
     }
@@ -60,11 +60,9 @@ function StartServer($targetDir, $port)
     echo "\n" . "Server Started! \n" . COLOR_GREEN;
 
     while (true) {
-        exec("php -S localhost:$port");
+        exec("php -S localhost:$port -t $targetDir"); // Specify the targetDir as document root
         echo "PHP CLI Server was running on localhost:$port";
     }
-
-
 }
 
 $targetDir = TuringFrame();
