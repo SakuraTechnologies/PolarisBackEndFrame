@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8aa70a9b-13e0-4da7-bbe3-86a84cb6b43a" name="Changes" comment="1. 与API和源代码部分进行了分离&#10;2. 使用更加方便" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0" />
+  <component name="ProjectId" id="2jAJvnNWxob4WBK4Pm3fq2eGCxm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="H:/DebugMC" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\TuringFrame" />
+      <recent name="D:\TuringFrame\bin" />
+      <recent name="D:\TuringFrame\Nginx" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\TuringFrame" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Shell Script.TuringFrameStartScript">
+    <configuration name="ClassLoader.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/TuringFrame/ClassLoader.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="AboutMe.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/AboutME/App/AboutMe.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.0" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="ClassLoader.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/ClassLoader.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.0" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="HttpServer.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/HttpServer/HttpServer.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="ServerApp.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/HttpServer/ServerApp.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/AboutME/App/MySkill.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.0" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="TuringFrameStartScript" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/start.cmd" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.ClassLoader.php" />
+      <item itemvalue="PHP Script.Unnamed" />
+      <item itemvalue="PHP Script.AboutMe.php" />
+      <item itemvalue="PHP Script.ClassLoader.php" />
+      <item itemvalue="PHP Script.ServerApp.php" />
+      <item itemvalue="PHP Script.HttpServer.php" />
+      <item itemvalue="Shell Script.TuringFrameStartScript" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.HttpServer.php" />
+        <item itemvalue="PHP Script.ClassLoader.php" />
+        <item itemvalue="JavaScript Debug.ClassLoader.php" />
+        <item itemvalue="PHP Script.ServerApp.php" />
+        <item itemvalue="PHP Script.AboutMe.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.17890.8" />
+        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.17890.8" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8aa70a9b-13e0-4da7-bbe3-86a84cb6b43a" name="Changes" comment="" />
+      <created>1720824181598</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720824181598</updated>
+      <workItem from="1720824182787" duration="11944000" />
+      <workItem from="1720840529544" duration="5615000" />
+      <workItem from="1720857916617" duration="11294000" />
+      <workItem from="1720930897735" duration="1674000" />
+      <workItem from="1720943179085" duration="9505000" />
+      <workItem from="1720969611625" duration="182000" />
+      <workItem from="1721015625285" duration="1229000" />
+      <workItem from="1721042940027" duration="43000" />
+      <workItem from="1721571604493" duration="7578000" />
+      <workItem from="1721736659837" duration="8300000" />
+      <workItem from="1721783822913" duration="25117000" />
+      <workItem from="1721877027075" duration="15012000" />
+    </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1720874690605</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720874690606</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1. 添加了POST GET CORS头请求&#10;2. 添加了模板文件夹&#10;3. 添加了跨源POST GET 包的获取&#10;4. 修复了一些BUG">
+      <option name="closed" value="true" />
+      <created>1720876717844</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720876717844</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1. 修复了一些Bug&#10;2. 内置了HttpServer&#10;3. 完善了模板引擎">
+      <created>1721894180947</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721894180947</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1. 漏了一个BUG">
+      <created>1721894693436</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721894693436</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1. 与API和源代码部分进行了分离&#10;2. 使用更加方便">
+      <created>1721896482570</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721896482570</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="06bdc905-a1c9-4ce0-af2c-85a53406e4c3">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/TuringFrame/AboutME" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="06bdc905-a1c9-4ce0-af2c-85a53406e4c3" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <MESSAGE value="1. 添加了POST GET CORS头请求&#10;2. 添加了模板文件夹&#10;3. 添加了跨源POST GET 包的获取&#10;4. 修复了一些BUG" />
+    <MESSAGE value="1. 修复了一些Bug&#10;2. 内置了HttpServer&#10;3. 完善了模板引擎" />
+    <MESSAGE value="1. 漏了一个BUG" />
+    <MESSAGE value="1. 与API和源代码部分进行了分离&#10;2. 使用更加方便" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 与API和源代码部分进行了分离&#10;2. 使用更加方便" />
+  </component>
+</project>

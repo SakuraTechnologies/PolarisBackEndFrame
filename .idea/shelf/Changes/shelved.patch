@@ -1,0 +1,17 @@
+Index: src/README.md
+===================================================================
+diff --git a/src/README.md b/src/README.md
+deleted file mode 100644
+--- a/src/README.md	(revision fffd0663e5faa213a9e8dc47746758a9a69d26d9)
++++ /dev/null	(revision fffd0663e5faa213a9e8dc47746758a9a69d26d9)
+@@ -1,10 +0,0 @@
+-# TuringFrame_图灵框架
+-
+-#### 介绍
+-### TuringFrame
+-
+-一个小团队自研的后端框架
+-
+-本框架主打的是一个高度模块化，自动化
+-
+-使用教程请看Wiki
