@@ -1,5 +1,5 @@
 //暴露函数
-export function sendRquest(url,type,body,debugmode){
+//url参数填写网址，type参数填写请求类型，body参数填写请发送内容，debugmode参数填写一个数字
 //发送请求
     //设置result变量，如果发生错误则返回null
     let result = null;
