@@ -2,17 +2,15 @@
 
 namespace TuringFrame;
 
-use HttpResponse\HeaderList;
-
-require_once 'HeaderList.php';
-
 class SimpleRedirector
 {
     public function __construct($redirectLink)
     {
         if (!headers_sent()) {
-            $Header = new HeaderList();
-            $Header->RequestHeader();
+            header('Access-Control-Allow-Origin: *');
+            header('Access-Control-Allow-Methods: GET, POST');
+            header('Access-Control-Allow-Headers: X-Requested-With');
+            header('Content-Type: application/json');
             header("Location: $redirectLink");
         }
         exit;

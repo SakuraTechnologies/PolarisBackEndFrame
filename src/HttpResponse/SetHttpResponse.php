@@ -6,7 +6,7 @@ namespace HttpResponse;
 // This is A API
 class SetHttpResponse
 {
-    public function __construct($YourHttpResponseCode)
+    public function SetHttpResponse($YourHttpResponseCode)
     {
         http_response_code($YourHttpResponseCode);
     }

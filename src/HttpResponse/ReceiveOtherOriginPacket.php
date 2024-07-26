@@ -3,25 +3,22 @@
 namespace HttpResponse;
 
 require_once 'SetHttpResponse.php';
-require_once 'HeaderList.php';
-
 class ReceiveOtherOriginPacket
 {
-
     /**
      * 接受POST数据包，并使用提供的函数处理数据
      *
      * @param callable $dataHandler 用于处理数据的回调函数
      */
-    public function receiveOtherOriginPostPacket(callable $dataHandler, $Message)
+    public function receiveOtherOriginPostPacket(callable $dataHandler)
     {
         // Add Cors Header
-        $HeaderList = new HeaderList();
-        $HeaderList->RequestHeader();
+        $this->addCorsHeaders();
 
         if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
             // 预检请求，直接返回成功响应
-            new SetHttpResponse(200);
+            $httpResponse = new SetHttpResponse();
+            $httpResponse->setHttpResponse(200);
             exit;
         }
 
@@ -34,7 +31,7 @@ class ReceiveOtherOriginPacket
             // 构造响应
             $response = [
                 'status' => 'success',
-                'message' => "$Message",
+                'message' => 'Data received and processed',
                 'data' => $processedData
             ];
 
@@ -43,7 +40,13 @@ class ReceiveOtherOriginPacket
     }
 
     // Add Cores Request Header
-
+    private function addCorsHeaders()
+    {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type");
+        header("Access-Control-Max-Age: 3600");
+    }
 
     // String A Request Body
     private function getRequestBody()
@@ -62,12 +65,13 @@ class ReceiveOtherOriginPacket
      */
     public function receiveOtherOriginGetPacket(callable $dataHandler)
     {
-        $HeaderList = new HeaderList();
-        $HeaderList->RequestHeader();
+        // Add Cors Header
+        $this->addCorsHeaders();
 
         if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
             // 预检请求，直接返回成功响应
-            new SetHttpResponse(200);
+            $httpResponse = new SetHttpResponse();
+            $httpResponse->SetHttpResponse(200);
             exit;
         }
 
