@@ -2,7 +2,7 @@
 
 namespace TuringFrame;
 
-
+// Main APP
 const COLOR_RESET = "\033[0m";
 const COLOR_GREEN = "\033[32m";
 const COLOR_YELLOW = "\033[33m";
@@ -31,7 +31,7 @@ function TuringFrame()
     } else {
         echo COLOR_YELLOW . "Please Input your Project Name " . COLOR_RESET;
         $projectName = trim(fgets(STDIN));
-        $targetDir = "\TuringFrame/public/$projectName"; // Change the target directory to be inside TuringFrame
+        $targetDir = "\TuringFrame\public/$projectName"; // Change the target directory to be inside TuringFrame
         printColored("Project $projectName was created", COLOR_GREEN);
 
         if (!is_dir($targetDir)) {
@@ -57,7 +57,7 @@ function StartServer($targetDir, $port)
     exec("php ClassLoader.php");
 
     while (true) {
-        exec("php -S localhost:$port -t $targetDir"); // Specify the targetDir as document root
+        exec("php -S localhost:$port -t \TuringFrame\public"); // Specify the targetDir as document root
         echo "PHP CLI Server was running on localhost:$port";
     }
 }
