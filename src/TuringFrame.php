@@ -63,4 +63,14 @@ function StartServer($targetDir, $port)
 }
 
 $targetDir = TuringFrame();
-StartServer($targetDir, 8000);
+$openfile = fopen("../config.json", "r");
+global $result2;
+if ($openfile) {
+    $jsonContent = fread($openfile, filesize("../config.json"));
+    fclose($openfile);
+    $port = json_decode($jsonContent, true); // 解析为数组
+    $result2 = $port['port'];
+} else {
+    echo "Failed to open file.";
+}
+StartServer($targetDir, $result2);
