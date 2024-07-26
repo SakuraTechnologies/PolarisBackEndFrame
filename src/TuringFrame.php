@@ -2,7 +2,6 @@
 
 namespace TuringFrame;
 
-use Exception;
 
 const COLOR_RESET = "\033[0m";
 const COLOR_GREEN = "\033[32m";
