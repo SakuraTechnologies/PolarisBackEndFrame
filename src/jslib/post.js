@@ -1,5 +1,5 @@
 //暴露函数
-export function sendrequest(url,body){
+export function sendRquest(url,body){
     //发送请求
     try{
     fetch(url,{
