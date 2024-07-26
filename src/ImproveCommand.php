@@ -2,6 +2,8 @@
 
 namespace TuringFrame;
 
+use Exception;
+
 class ImproveCommand
 {
 
@@ -33,25 +35,52 @@ class ImproveCommand
     }
 
     // TuringPackageManager
-    public function TPM($Addr, $FileName){
-        $url = "$Addr";
-        $local_file = "\TuringFrame\src\outlib/$FileName";
-        $remote_file = fopen($url, 'r');
-        $fp = fopen($local_file, 'w');
-        while (!feof($remote_file)) {
-            fwrite($fp, fread($remote_file, 1024));
+    public function TPM($Addr, $FileName)
+    {
+        try {
+            $url = "$Addr";
+            $local_file = "\TuringFrame\src\outlib/$FileName";
+            $remote_file = fopen($url, 'r');
+            $fp = fopen($local_file, 'w');
+            while (!feof($remote_file)) {
+                fwrite($fp, fread($remote_file, 1024));
+            }
+            fclose($remote_file);
+            fclose($fp);
+        } catch (Exception $e){
+            echo $e->getMessage();
+            return true;
         }
-        fclose($remote_file);
-        fclose($fp);
     }
 
-    public function fileServerStart(){
+    public function fileServerStart() {
         $openFile = file_get_contents('\TuringFrame\config.json');
         $data = json_decode($openFile, true);
-        if ($data['Development'] = true){
-            echo "File Service was Started";
+
+        if ($data['Development'] === true) {
+            $filePath = '\TuringFrame\prj-assets/ftp.excluded';
+
+            if (!file_exists($filePath)) {
+                @mkdir("\TuringFrame\prj-assets", 0777);
+                @chmod("\TuringFrame\prj-assets/ftp.php", 0777);
+                $data1 = fopen("\TuringFrame\src/ftpserver/ftp.php", 'r');
+                file_put_contents("\TuringFrame\prj-assets/ftp.php", $data1);
+                $dirPath = dirname($filePath);
+                if (!is_dir($dirPath)) {
+                    mkdir($dirPath, 0777, true);
+                }
+                touch($filePath);
+                chmod($filePath, 0644);
+                exec("php \TuringFrame\prj-assets/ftp.php");
+            }
+            echo "Develop Service was started!". "\n";
         } else {
-            echo "SB";
+            echo "Develop Server Failed to Create ". "\n";
+        }
+
+        if (file_exists($filePath)){
+            echo "Server was created" ;
+            return;
         }
     }
 

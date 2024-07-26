@@ -2,6 +2,7 @@
 
 namespace HttpResponse;
 
+require_once 'SetHttpResponse.php';
 class ReceiveOtherOriginPacket
 {
     /**
@@ -70,7 +71,7 @@ class ReceiveOtherOriginPacket
         if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
             // 预检请求，直接返回成功响应
             $httpResponse = new SetHttpResponse();
-            $httpResponse->setHttpResponse(200);
+            $httpResponse->SetHttpResponse(200);
             exit;
         }
 
@@ -90,3 +91,4 @@ class ReceiveOtherOriginPacket
         }
     }
 }
+

@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aa70a9b-13e0-4da7-bbe3-86a84cb6b43a" name="Changes" comment="">
+    <list default="true" id="8aa70a9b-13e0-4da7-bbe3-86a84cb6b43a" name="Changes" comment="添加外部库的支持&#10;完善了SetHttpResponse">
+      <change afterPath="$PROJECT_DIR$/CommandTool.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Commandtool.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/developtool/Package.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ftpserver/ftp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpResponse/ReceiveOtherOriginPacket.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpResponse/ReceiveOtherOriginPacket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpResponse/SetHttpResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpResponse/SetHttpResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImproveCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImproveCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TuringFrame.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TuringFrame.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ClassLoader.php" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -67,11 +76,32 @@
       <recent name="D:\TuringFrame" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.ImproveCommand.php">
+  <component name="RunManager" selected="PHP Script.Unnamed (1)">
     <configuration name="ClassLoader.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/TuringFrame/ClassLoader.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="ImproveCommand.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/ImproveCommand.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.0" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed (1)" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/src/ClassLoader.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.0" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/prj-assets/ftp.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.0" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
       <method v="2" />
     </configuration>
     <configuration name="TuringFrameStartScript" type="ShConfigurationType">
@@ -91,6 +121,8 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.ClassLoader.php" />
+      <item itemvalue="PHP Script.Unnamed (1)" />
+      <item itemvalue="PHP Script.Unnamed" />
       <item itemvalue="PHP Script.ImproveCommand.php" />
       <item itemvalue="Shell Script.TuringFrameStartScript" />
     </list>
@@ -129,7 +161,8 @@
       <workItem from="1721736659837" duration="8300000" />
       <workItem from="1721783822913" duration="25117000" />
       <workItem from="1721877027075" duration="28737000" />
-      <workItem from="1721958072546" duration="135000" />
+      <workItem from="1721958072546" duration="4347000" />
+      <workItem from="1721967902117" duration="8197000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -168,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1721896482570</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changes2">
+      <created>1721958307707</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721958307707</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +281,9 @@
     <MESSAGE value="1. 修复了一些Bug&#10;2. 内置了HttpServer&#10;3. 完善了模板引擎" />
     <MESSAGE value="1. 漏了一个BUG" />
     <MESSAGE value="1. 与API和源代码部分进行了分离&#10;2. 使用更加方便" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 与API和源代码部分进行了分离&#10;2. 使用更加方便" />
+    <MESSAGE value="Changes2" />
+    <MESSAGE value="添加外部库的支持&#10;完善了SetHttpResponse" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加外部库的支持&#10;完善了SetHttpResponse" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

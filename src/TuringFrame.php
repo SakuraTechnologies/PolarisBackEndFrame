@@ -20,11 +20,10 @@ function printColored($text, $color)
 
 function TuringFrame()
 {
+
     global $executionStatusFile;
-    global $checkNginx;
 
     $executionStatusFile = './.TuringFrame_executed';
-    $checkNginx = './.htaccess';
 
     if (file_exists($executionStatusFile)) {
         printColored("TuringFrame has already been executed.", COLOR_YELLOW);
@@ -39,8 +38,6 @@ function TuringFrame()
             if (!mkdir($targetDir, 0777, true)) {
                 die(COLOR_RED . "Dir Died!" . COLOR_RESET);
             }
-
-
             $templates = "$targetDir/templates";
             $App = "$targetDir/App";
             @mkdir($templates, 0777, true);
@@ -57,6 +54,7 @@ function StartServer($targetDir, $port)
 {
     echo "Starting Server..." . COLOR_GREEN;
     echo "\n" . "Server Started! \n" . COLOR_GREEN;
+    exec("php ClassLoader.php");
 
     while (true) {
         exec("php -S localhost:$port -t $targetDir"); // Specify the targetDir as document root
