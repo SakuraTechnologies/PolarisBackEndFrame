@@ -23,7 +23,6 @@ function renderPage(path, params = {}) {
     document.getElementById('content').innerHTML = content;
 }
 
-// 解析URL中的动态参数
 function parseParams(url, pattern) {
     const regex = new RegExp(pattern.replace(/:[^\/]+/g, '([^/]+)'));
     const match = url.match(regex);
@@ -56,9 +55,7 @@ function checkRoute() {
 }
 
 window.addEventListener('popstate', checkRoute);
-
 checkRoute();
-
 document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();

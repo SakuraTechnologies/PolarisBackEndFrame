@@ -6,7 +6,6 @@ use Exception;
 
 class ImproveCommand
 {
-
     public function onCommand()
     {
         echo "TMS (Turing Terminal Service) was started, enter 'help' to get more " . "\n";
@@ -39,7 +38,8 @@ class ImproveCommand
     {
         try {
             $url = "$Addr";
-            $local_file = "\TuringFrame\src\outlib/$FileName";
+
+            $local_file = "./src/outlib/$FileName";
             $remote_file = fopen($url, 'r');
             $fp = fopen($local_file, 'w');
             while (!feof($remote_file)) {
@@ -61,17 +61,17 @@ class ImproveCommand
             $filePath = '\TuringFrame\prj-assets/ftp.excluded';
 
             if (!file_exists($filePath)) {
-                @mkdir("\TuringFrame\prj-assets", 0777);
-                @chmod("\TuringFrame\prj-assets/ftp.php", 0777);
-                $data1 = fopen("\TuringFrame\src/ftpserver/ftp.php", 'r');
-                file_put_contents("\TuringFrame\prj-assets/ftp.php", $data1);
+                @mkdir("../prj-assets", 0777);
+                @chmod("../prj-assets/ftp.php", 0777);
+                $data1 = fopen("../src/ftpserver/ftp.php", 'r');
+                file_put_contents("../prj-assets/ftp.php", $data1);
                 $dirPath = dirname($filePath);
                 if (!is_dir($dirPath)) {
                     mkdir($dirPath, 0777, true);
                 }
                 touch($filePath);
                 chmod($filePath, 0644);
-                exec("php \TuringFrame\prj-assets/ftp.php");
+                exec("php ../prj-assets/ftp.php");
             }
             echo "Develop Service was started!". "\n";
         } else {
