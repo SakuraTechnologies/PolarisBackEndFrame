@@ -2,7 +2,7 @@
 export function sendrequest(url,body){
     //发送请求
     try{
-    let result = fetch(url,{
+    fetch(url,{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
