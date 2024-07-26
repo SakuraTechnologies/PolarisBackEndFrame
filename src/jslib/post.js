@@ -28,7 +28,7 @@ export function sendRquest(url,type,body,debugmode){
         console.log("请求类型错误")
     }
     if(debugmode == 3){
-        console.log(result)
+        console.log("请求的结果：" + result + " 请求的网址：" + url + " 请求的类型：" + type + " 请求的内容：" + body + "debug模式：" + 3)
     }
     return result
 }
