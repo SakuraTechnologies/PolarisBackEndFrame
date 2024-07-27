@@ -2,8 +2,14 @@
 
 function FtpCreate(){
 
-    $port = 21;
+    $openfile = fopen("../config.json", "r");
+
+    $jsonContent = fread($openfile, filesize("../config.json"));
+    fclose($openfile);
+    $port2 = json_decode($jsonContent, true);
+    $port = $port2['ftpport'];
     $address = '127.0.0.1';
+
 
     $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
     if ($socket === false) {
