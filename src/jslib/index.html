@@ -27,14 +27,6 @@ function typewriter(id, originalText, interval) {
     writeText(0);
 }
 
-async function typewriter(id,originalText,interval){
-    let text = "";
-    originalText = originalText.split("");
-    for(let i = 0; i < originalText.length; i++){
-        text += originalText[i];
-        await sleep(interval);
-        document.getElementById(id).innerText = text;
-    }}
 typewriter("content", "Helloworld", 100);
 </script>
 </html>

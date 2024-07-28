@@ -1,7 +1,7 @@
 /** 
-* @param string id 标签的id
-* @param string originalText 要输出的字符串
-* @param number interval 输出间隔时间，单位ms
+* @param {string} id 标签的id
+* @param {string} originalText 要输出的字符串
+* @param {number} interval 输出间隔时间，单位ms
 */
 export function typewriter(id, originalText, interval) {
     let text = "";
@@ -19,7 +19,7 @@ export function typewriter(id, originalText, interval) {
     writeText(0);
 }
     //使用示例：
-    //typewriter("content","Helloworld",1000);
+    typewriter("content","Helloworld",1000);
     //在一个id为content的标签中，每0.1秒输出一个字符串
     
 
