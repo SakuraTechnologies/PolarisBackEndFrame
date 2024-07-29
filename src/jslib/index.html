@@ -6,27 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="content"></div>
+    <div class="blur-element">HELLOworld
+
+    </div>
 </body>
 <script type="module">
-
-    
-function typewriter(id, originalText, interval) {
-    let text = "";
-    const element = document.getElementById(id);
-
-    function writeText(i) {
-        if (i < originalText.length) {
-            text += originalText[i];
-            element.innerText = text;
-            console.log(text);
-            setTimeout(() => writeText(i + 1), interval);
-        }
+class roate{
+    constructor(speed){
+        this.speed = speed;
+        console.log(speed)
     }
-
-    writeText(0);
 }
 
-typewriter("content", "Helloworld", 100);
+roate(123)
 </script>
+<style>
+    .blur-element {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  
+}   
+</style>
 </html>
