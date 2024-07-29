@@ -1,7 +1,7 @@
 /**
  * @description: 暂停一段时间
- * @param number milliSeconds
  * @return {*}
+ * @param milliSeconds
  */
 export function sleep(milliSeconds) {
     return new Promise(resolve => {

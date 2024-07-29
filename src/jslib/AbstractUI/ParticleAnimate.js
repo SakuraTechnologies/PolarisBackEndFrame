@@ -68,11 +68,11 @@ class Particle {
 let particlesArray;
 
 /**
+ * @param {int} numberOfParticles
  * 初始化函数，用于创建粒子数组
  */
-function init() {
+export function init(numberOfParticles) {
     particlesArray = [];
-    const numberOfParticles = 100; // 粒子数量
     for (let i = 0; i < numberOfParticles; i++) {
         // 随机生成粒子的半径、位置和颜色
         const radius = (Math.random() * 5) + 1;
@@ -87,7 +87,7 @@ function init() {
 /**
  * 动画函数，用于持续更新和绘制粒子
  */
-function animate() {
+export function animate() {
     requestAnimationFrame(animate); // 递归调用自身以实现动画
     // 清空画布以便重新绘制
     ctx.clearRect(0, 0, canvas.width, canvas.height);

@@ -3,17 +3,15 @@ const routes = {
         console.log('Home page');
         return '<h1>Home Page</h1>';
     },
-    '/about': () => {
-        console.log('About page');
-        return '<h1>About Page</h1>';
-    },
-    '/user/:id': (params) => {
-        console.log(`User page for id: ${params.id}`);
-        return `<h1>User Page for ID: ${params.id}</h1>`;
-    }
 };
 
-function renderPage(path, params = {}) {
+/**
+ * @description 渲染页面
+ * @param path
+ * @param params
+ * @returns {string}
+ */
+export function renderPage(path, params = {}) {
     const route = routes[path];
     if (!route) {
         console.error('Route not found');
@@ -23,7 +21,12 @@ function renderPage(path, params = {}) {
     document.getElementById('content').innerHTML = content;
 }
 
-function parseParams(url, pattern) {
+/**
+ * @param url
+ * @param pattern
+ * @returns {{}|null}
+ */
+export function parseParams(url, pattern) {
     const regex = new RegExp(pattern.replace(/:[^\/]+/g, '([^/]+)'));
     const match = url.match(regex);
     if (match) {
@@ -36,7 +39,8 @@ function parseParams(url, pattern) {
     return null;
 }
 
-function checkRoute() {
+
+export function checkRoute() {
     const path = window.location.pathname;
     let params = {};
     for (let routePath in routes) {
