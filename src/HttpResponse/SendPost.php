@@ -8,7 +8,7 @@
  * And our team is from China!
  */
 
-namespace HttpResponse;
+require_once 'Header.php';
 
 // Send Post Module
 class SendPost
@@ -16,10 +16,8 @@ class SendPost
     // Main Module
     public function PostSender($ResponseData, $PostSendurl)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
-        header('Access-Control-Allow-Headers: X-Requested-With');
-        header('Content-Type: application/json');
+        $header = new Header();
+        $header->RequestHeader();
         // Init curl
         $Curl = curl_init();
         // Set A Json Data

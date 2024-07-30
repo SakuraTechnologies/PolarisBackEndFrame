@@ -1,8 +1,10 @@
 <?php
 
-namespace HttpResponse;
 
+require_once '../ExceptionProcessor.php';
 require_once 'SetHttpResponse.php';
+require_once 'Header.php';
+
 class ReceiveOtherOriginPacket
 {
     /**
@@ -13,42 +15,36 @@ class ReceiveOtherOriginPacket
     public function receiveOtherOriginPostPacket(callable $dataHandler)
     {
         // Add Cors Header
-        $this->addCorsHeaders();
+        $header = new Header();
+        $header->RequestHeader();
+        try {
+            if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
+                // 预检请求，直接返回成功响应
+                $httpResponse = new SetHttpResponse(200);
+                exit;
+            }
 
-        if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
-            // 预检请求，直接返回成功响应
-            $httpResponse = new SetHttpResponse();
-            $httpResponse->setHttpResponse(200);
-            exit;
-        }
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $data = $this->getRequestBody();
 
-        if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $data = $this->getRequestBody();
+                // 使用提供的函数处理数据
+                $processedData = $dataHandler($data);
 
-            // 使用提供的函数处理数据
-            $processedData = $dataHandler($data);
+                // 构造响应
+                $response = [
+                    'status' => 'success',
+                    'message' => 'Data received and processed',
+                    'data' => $processedData
+                ];
 
-            // 构造响应
-            $response = [
-                'status' => 'success',
-                'message' => 'Data received and processed',
-                'data' => $processedData
-            ];
-
-            echo json_encode($response);
+                echo json_encode($response);
+            }
+        } catch (Exception $e) {
+            $date = date("Y-m-d_H-i-s");
+            new ExceptionProcessor($e->getMessage() . "$e\n", "ReceiveOtherOriginPacket Err was happend!\n" . "turingframe.exception.cli\n" . "YukinaNetwork & BannerServer Tech Team ©2024\n" . "$date");
         }
     }
 
-    // Add Cores Request Header
-    private function addCorsHeaders()
-    {
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type");
-        header("Access-Control-Max-Age: 3600");
-    }
-
-    // String A Request Body
     private function getRequestBody()
     {
         if ($_SERVER["CONTENT_TYPE"] === "application/json") {
@@ -66,12 +62,12 @@ class ReceiveOtherOriginPacket
     public function receiveOtherOriginGetPacket(callable $dataHandler)
     {
         // Add Cors Header
-        $this->addCorsHeaders();
+        $header = new Header();
+        $header->RequestHeader();
 
         if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
             // 预检请求，直接返回成功响应
-            $httpResponse = new SetHttpResponse();
-            $httpResponse->SetHttpResponse(200);
+            new SetHttpResponse(200);
             exit;
         }
 

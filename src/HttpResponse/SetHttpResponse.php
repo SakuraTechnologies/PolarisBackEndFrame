@@ -1,13 +1,15 @@
 <?php
 
-namespace HttpResponse;
-
 // Set Your Http Response Code
 // This is A API
 class SetHttpResponse
 {
-    public function SetHttpResponse($YourHttpResponseCode)
+    private $code;
+
+    public function __construct($code)
     {
-        http_response_code($YourHttpResponseCode);
+        $this->code = $code;
+        http_response_code($this->code);
+        return $this->code;
     }
 }

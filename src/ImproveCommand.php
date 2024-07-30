@@ -27,6 +27,10 @@ class ImproveCommand
                     $FileName = trim(fgets(STDIN));
                     $this->TPM($Addr, $FileName);
                     break;
+                case 'GetInterfaceStatus':
+                    echo '------ GetInterfaceStatus ------' . "\n";
+
+                    break;
                 default:
                     echo 'Command not found' . "\n";
             }
@@ -34,31 +38,40 @@ class ImproveCommand
     }
 
     // TuringPackageManager
+
     public function TPM($Addr, $FileName)
     {
         try {
-            $url = "$Addr";
+            $url = $Addr . '/' . $FileName;
 
-            $local_file = "./src/outlib/$FileName";
             $remote_file = fopen($url, 'r');
+            if (!$remote_file) {
+                throw new Exception("Couldn't open remote file，URL: $url");
+            }
+
+            $local_file = "../src/outlib/$FileName";
             $fp = fopen($local_file, 'w');
+            if (!$fp) {
+                throw new Exception("Couldn't open local file，Path: $local_file");
+            }
+
             while (!feof($remote_file)) {
                 fwrite($fp, fread($remote_file, 1024));
             }
             fclose($remote_file);
             fclose($fp);
-        } catch (Exception $e){
+        } catch (Exception $e) {
             echo $e->getMessage();
             return true;
         }
     }
 
     public function fileServerStart() {
-        $openFile = file_get_contents('\TuringFrame\config.json');
+        $openFile = file_get_contents('../config.json');
         $data = json_decode($openFile, true);
 
         if ($data['Development'] === true) {
-            $filePath = '\TuringFrame\prj-assets/ftp.excluded';
+            $filePath = '../prj-assets/ftp.excluded';
 
             if (!file_exists($filePath)) {
                 @mkdir("../prj-assets", 0777);

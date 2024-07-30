@@ -4,19 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aa70a9b-13e0-4da7-bbe3-86a84cb6b43a" name="Changes" comment="添加外部库的支持&#10;完善了SetHttpResponse">
-      <change afterPath="$PROJECT_DIR$/CommandTool.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Commandtool.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/developtool/Package.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ftpserver/ftp.php" afterDir="false" />
+    <list default="true" id="8aa70a9b-13e0-4da7-bbe3-86a84cb6b43a" name="Changes" comment="Formatted Some Code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/RouteRule.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/RouteRule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataBase/Connector.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase/Connector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpResponse/GetHttpReponseCode.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpResponse/GetHttpReponseCode.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HttpResponse/ReceiveOtherOriginPacket.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpResponse/ReceiveOtherOriginPacket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpResponse/SendGet.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpResponse/SendGet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpResponse/SendPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpResponse/SendPost.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HttpResponse/SetHttpResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpResponse/SetHttpResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpResponse/SimpleRedirector.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpResponse/SimpleRedirector.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ImproveCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImproveCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TemplateEnginee/TemplateAPI.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TemplateEnginee/TemplateAPI.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TuringFrame.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TuringFrame.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/developtool/Package.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/developtool/Package.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jslib/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/outlib/.keep" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,12 +62,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ClassLoader.php" />
+    <property name="last_opened_file_path" value="E:/diskdisk/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -73,19 +79,25 @@
       <recent name="D:\TuringFrame\Nginx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\TuringFrame\src\jslib\Module" />
+      <recent name="D:\TuringFrame\src\jslib\AbstractUI\Manager" />
       <recent name="D:\TuringFrame" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.Unnamed (1)">
-    <configuration name="ClassLoader.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/TuringFrame/ClassLoader.php" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="PHP Script.ExceptionProcessor.php">
+    <configuration name="ExceptionLogger.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/ExceptionLogger.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="ExceptionProcessor.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/ExceptionProcessor.php">
       <method v="2" />
     </configuration>
     <configuration name="ImproveCommand.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/ImproveCommand.php">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 8.0" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <configuration name="LogProcess.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/log/LogProcess.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="Sync.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/async/Sync.php">
       <method v="2" />
     </configuration>
     <configuration name="Unnamed (1)" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/src/ClassLoader.php">
@@ -120,16 +132,22 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.ClassLoader.php" />
       <item itemvalue="PHP Script.Unnamed (1)" />
       <item itemvalue="PHP Script.Unnamed" />
-      <item itemvalue="PHP Script.ImproveCommand.php" />
+      <item itemvalue="PHP Script.Sync.php" />
+      <item itemvalue="PHP Script.LogProcess.php" />
       <item itemvalue="Shell Script.TuringFrameStartScript" />
+      <item itemvalue="PHP Script.ExceptionLogger.php" />
+      <item itemvalue="PHP Script.ImproveCommand.php" />
+      <item itemvalue="PHP Script.ExceptionProcessor.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.ExceptionProcessor.php" />
         <item itemvalue="PHP Script.ImproveCommand.php" />
-        <item itemvalue="JavaScript Debug.ClassLoader.php" />
+        <item itemvalue="PHP Script.ExceptionLogger.php" />
+        <item itemvalue="PHP Script.LogProcess.php" />
+        <item itemvalue="PHP Script.Sync.php" />
       </list>
     </recent_temporary>
   </component>
@@ -142,6 +160,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8aa70a9b-13e0-4da7-bbe3-86a84cb6b43a" name="Changes" comment="" />
@@ -163,6 +184,17 @@
       <workItem from="1721877027075" duration="28737000" />
       <workItem from="1721958072546" duration="4347000" />
       <workItem from="1721967902117" duration="8197000" />
+      <workItem from="1721987658775" duration="3117000" />
+      <workItem from="1721991218197" duration="12120000" />
+      <workItem from="1722011224819" duration="489000" />
+      <workItem from="1722043925186" duration="6182000" />
+      <workItem from="1722056142995" duration="18884000" />
+      <workItem from="1722135520261" duration="3107000" />
+      <workItem from="1722161935558" duration="3584000" />
+      <workItem from="1722231985126" duration="643000" />
+      <workItem from="1722239656759" duration="9959000" />
+      <workItem from="1722302156324" duration="2916000" />
+      <workItem from="1722316174138" duration="15979000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -208,7 +240,63 @@
       <option name="project" value="LOCAL" />
       <updated>1721958307707</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加外部库的支持&#10;完善了SetHttpResponse">
+      <created>1721993637713</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721993637713</updated>
+    </task>
+    <task id="LOCAL-00008" summary="封装前端JavaScript路由">
+      <created>1721994274328</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721994274328</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix Server BUG">
+      <created>1721995630191</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1721995630191</updated>
+    </task>
+    <task id="LOCAL-00010" summary="修复了路径问题&#10;封装了UI库的部分内容">
+      <created>1722003008490</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722003008490</updated>
+    </task>
+    <task id="LOCAL-00011" summary="留个注释">
+      <created>1722006779157</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1722006779157</updated>
+    </task>
+    <task id="LOCAL-00012" summary="UpdateFTPServer">
+      <created>1722045557883</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1722045557883</updated>
+    </task>
+    <task id="LOCAL-00013" summary="添加空格常量">
+      <created>1722045877859</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1722045877859</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Formatted Some Code">
+      <created>1722259299006</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1722259299006</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +371,14 @@
     <MESSAGE value="1. 与API和源代码部分进行了分离&#10;2. 使用更加方便" />
     <MESSAGE value="Changes2" />
     <MESSAGE value="添加外部库的支持&#10;完善了SetHttpResponse" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加外部库的支持&#10;完善了SetHttpResponse" />
+    <MESSAGE value="封装前端JavaScript路由" />
+    <MESSAGE value="Fix Server BUG" />
+    <MESSAGE value="修复了路径问题&#10;封装了UI库的部分内容" />
+    <MESSAGE value="留个注释" />
+    <MESSAGE value="UpdateFTPServer" />
+    <MESSAGE value="添加空格常量" />
+    <MESSAGE value="Formatted Some Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatted Some Code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

@@ -1,14 +1,12 @@
 <?php
 
-namespace HttpResponse;
-
 require_once "SetHttpResponse.php";
 
 // Get Http Response Code
 class GetHttpReponseCode
 {
 
-    public function getHttpReponseCode($YourWebsiteIP, $SendCount = 1, $TimeOut = 1000)
+    public function __construct($YourWebsiteIP, $SendCount = 1, $TimeOut = 1000)
     {
         // Get Server OS
         // 添加CORS HEADER
@@ -18,20 +16,18 @@ class GetHttpReponseCode
         header('Content-Type: application/json');
 
         $ServerOS = PHP_OS;
-        if (stripos($ServerOS, 'linux') !== false){
+        if (stripos($ServerOS, 'linux') !== false) {
             $output = shell_exec("ping -c $SendCount -W $TimeOut $YourWebsiteIP");
-        } elseif (stripos($ServerOS, 'win') !== false){
+        } elseif (stripos($ServerOS, 'win') !== false) {
             $output = shell_exec("ping -n $SendCount -w $TimeOut $YourWebsiteIP");
         }
         // Check Packet Status
-        if (strpos($output, '1 packets transmitted, 1 received') !== false ||
-            strpos($output, '1 packets transmitted, 1 received') !== false) {
-            $HttpResponsesCode = new SetHttpResponse();
-            $HttpResponsesCode->SetHttpResponse(200);
+        if (str_contains($output, '1 packets transmitted, 1 received') ||
+            str_contains($output, '1 packets transmitted, 1 received')) {
+            new SetHttpResponse(200);
             return 200;
         } else {
-            $HttpResponsesCode = new SetHttpResponse();
-            $HttpResponsesCode->SetHttpResponse(503);
+            new SetHttpResponse(503);
             return 503;
         }
     }

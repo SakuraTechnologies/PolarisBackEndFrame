@@ -1,0 +1,4 @@
+{
+  "turingframe.exception.cli": "An Occurred error was happend! may be was port or file road err!",
+  "turingframe.exception.receive_other_origin_packet": "An Occurred error was happend! may be was host or request method err!"
+}

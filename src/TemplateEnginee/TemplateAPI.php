@@ -24,14 +24,11 @@ class TemplateAPI {
 
     private function parseTemplate($template)
     {
-
-
         foreach ($this->vars as $name => $value) {
             if (!is_array($value)) {
                 $template = str_replace('{{ ' . $name . ' }}', $value, $template);
             }
         }
-
 
         $template = preg_replace_callback(
             '/\{\% if\s+(.*?)\s+\%\}(.*?)\{\%\s+endif\s+\%\}/is',

@@ -1,16 +1,14 @@
 <?php
 
-namespace HttpResponse;
+require_once 'Header.php';
 
 // Send GET Packet
 class SendGet
 {
     public function GetSender($url)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
-        header('Access-Control-Allow-Headers: X-Requested-With');
-        header('Content-Type: application/json');
+        $header = new Header();
+        $header->RequestHeader();
         // Init Cur;
         $ch = curl_init();
         // Set Curl Option

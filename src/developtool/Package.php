@@ -7,9 +7,10 @@ class Package{
 
     public function __construct($pharname){
         $this->pharname = $pharname;
+        $this->pharPackage();
     }
 
     public function pharPackage(){
-        $phar = new Phar("$this->pharname");
+        new Phar("$this->pharname");
     }
 }

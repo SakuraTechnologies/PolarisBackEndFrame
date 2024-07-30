@@ -2,7 +2,7 @@
 
 namespace DataBase;
 
-use \mysqli;
+use mysqli;
 use PDO;
 use SQLite3;
 
@@ -13,7 +13,14 @@ class Connector
     private $conn;
     private $sqlite3;
     // Mysql Connector
-    public function Mysql($host, $user, $password, $database)
+
+    /**
+     * @param string $host
+     * @param string $user
+     * @param string $password
+     * @param string $database
+     */
+    public function Mysql(string $host, string $user, string $password, string $database)
     {
         // Create Connector
         $this->conn = new mysqli($host, $user, $password, $database);
@@ -25,6 +32,11 @@ class Connector
     }
 
     // SQLite Connector
+
+    /**
+     * @param $db_file
+     * @param $EncryptionKey
+     */
     public function SQLite($db_file, $EncryptionKey)
     {
         // Create A SQLite3 Object
@@ -37,7 +49,13 @@ class Connector
         }
     }
 
-    public function PostgreSQL($host, $user, $password, $database)
+    /**
+     * @param string $host
+     * @param string $user
+     * @param string $password
+     * @param string $database
+     */
+    public function PostgreSQL(string $host, string $user, string $password, string $database)
     {
         // Create Connector
         $dsn = "pgsql:host=$host;dbname=$database";
@@ -46,4 +64,6 @@ class Connector
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connected successfully";
     }
+
+
 }

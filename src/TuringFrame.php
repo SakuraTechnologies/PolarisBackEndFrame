@@ -1,6 +1,6 @@
 <?php
 
-namespace TuringFrame;
+require_once 'ExceptionProcessor.php';
 
 // Main APP
 const COLOR_RESET = "\033[0m";
@@ -55,10 +55,14 @@ function StartServer($targetDir, $port)
     echo "Starting Server..." . COLOR_GREEN;
     echo "\n" . "Server Started! \n" . COLOR_GREEN;
     exec("php ClassLoader.php");
-
-    while (true) {
-        exec("php -S localhost:$port -t ../public"); // Specify the targetDir as document root
-        echo "PHP CLI Server was running on localhost:$port";
+    try {
+        while (true) {
+            exec("php -S localhost:$port -t ../public"); // Specify the targetDir as document root
+            echo "PHP CLI Server was running on localhost:$port";
+        }
+    } catch (Exception $e) {
+        $date = date("Y-m-d_H-i-s"); // 更改日期格式以避免文件名中的冒号
+        new ExceptionProcessor($e->getMessage() . "$e\n", "CLI Err was happend!\n" . "turingframe.exception.cli\n" . "YukinaNetwork & BannerServer Tech Team ©2024\n" . "$date");
     }
 }
 
