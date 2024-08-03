@@ -1,14 +1,14 @@
-# TuringFrame_图灵框架
+# Polaris_BackEnd_Frame————北极星后端框架
 
 #### 介绍
 
 一个小团队自研的后端框架
 ![输入图片说明](.idea/shelf/Changes/favicon.jpg)
 
-ProjectDev:
+ProjectDevelopTeam:
 
-1. Rinnai
-1. xiguawannian
+1. YukinaNetwork -- TINUOKAS1
+1. BannerTeam -- xiguawannian
 1. Kalayia
 1. lovol
 
