@@ -1,5 +1,7 @@
 # Polaris_BackEnd_Frame————北极星后端框架
 
+本项目已入驻爱发电！可通过https://afdian.com/a/PolarisDev来捐赠我们
+
 #### 介绍
 
 一个小团队自研的后端框架
